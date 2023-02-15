@@ -28,11 +28,7 @@ services:
     image: ${INDEXER_SERVICE_VERSION:-kwetlesen/autoagora-indexer-service:latest}
     container_name: indexer-service
     depends_on:
-      - index-node-0
-      - query-node-0
-      - indexer-agent
       - postgres2
-      - rabbitmq
     environment:
       INDEXER_SERVICE_MNEMONIC: ${OPERATOR_SEED_PHRASE}
       INDEXER_SERVICE_INDEXER_ADDRESS: ${STAKING_WALLET_ADDRESS}
